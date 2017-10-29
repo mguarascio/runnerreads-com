@@ -1,0 +1,8 @@
+<h1>{{ book.title }}</h1>
+<h2>Link: {{ book.link }}</h2>
+<h2>Rank: {{ book.rank }}</h2>
+<ul>
+{% for comment in book.comment_set.all %}
+    <li>{{ comment.text }} : {{ comment.link }}</li>
+{% endfor %}
+</ul>
