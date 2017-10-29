@@ -1,0 +1,16 @@
+{
+  "name": "Runner Reads",
+  "description": "Top books recommended for runners by runners across the Internet",
+  "image": "heroku/python",
+  "repository": "https://github.com/mguarascio/runnerreads-com",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
