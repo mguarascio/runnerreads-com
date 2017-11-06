@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    # url(r'^$', include('reads.urls')),
     url(r'^reads/', include('reads.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^v1/api/reads/', include('reads.api'))
 ]
