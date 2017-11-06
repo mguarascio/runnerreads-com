@@ -14,7 +14,7 @@ class BookSerializer(serializers.HyperlinkedModelSerializer):
 
     def create(self, validated_data):
             comments_data = validated_data.pop('comments')
-            book, created = Book.objects.get_or_create(title=validated_data['title'], link=validated_data['link'])
+            book, created = Book.objects.get_or_create(link=validated_data['link'])
             print('book: ', book)
             print('created? ', created)
             for comment_data in comments_data:
