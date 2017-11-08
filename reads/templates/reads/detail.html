@@ -1,8 +1,19 @@
-<h1>{{ book.title }}</h1>
-<h2>Link: {{ book.link }}</h2>
-<h2>Rank: {{ book.rank }}</h2>
-<ul>
-{% for comment in book.comment_set.all %}
-    <li>{{ comment.text }} : {{ comment.link }}</li>
-{% endfor %}
-</ul>
+{% load staticfiles %}
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/reads.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ book.title }}</h1>
+        <h2>Link: {{ book.link }}</h2>
+        <h2>Rank: {{ book.rank }}</h2>
+        <ul class="data">
+        {% for comment in book.comment_set.all %}
+            <li>{{ comment.text }} : {{ comment.link }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>

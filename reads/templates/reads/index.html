@@ -1,11 +1,23 @@
-<h1>Runner Reads</h1>
-<h3>Top books recommended for runners by runners across the Internet</h3>
-{% if latest_book_list %}
-<ul>
-{% for book in latest_book_list %}
-    <li><a href="{% url 'reads:detail' book.id %}">{{ book.title }}</a></li>
-{% endfor %}
-</ul>
-{% else %}
-<p>No books are available.</p>
-{% endif %}
+{% load staticfiles %}
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/reads.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Runner Reads</h1>
+        <h3>Top books recommended for runners by runners across the Internet</h3>
+        <hr class="curved"/>
+        {% if latest_book_list %}
+        <ul class="data">
+        {% for book in latest_book_list %}
+            <li><a href="{% url 'reads:detail' book.id %}">{{ book.title }}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No books are available.</p>
+        {% endif %}
+    </div>
+</body>
