@@ -14,6 +14,7 @@ class Comment(models.Model):
     book = models.ForeignKey(Book, related_name='comments', on_delete=models.CASCADE)
     text = models.TextField()
     link = models.CharField(max_length=255)
+    score = models.IntegerField(null=True)
 
     def __str__(self):
         return self.link

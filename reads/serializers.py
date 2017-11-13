@@ -4,7 +4,7 @@ from rest_framework import serializers
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Comment
-        fields = ('text', 'link')
+        fields = ('text', 'link', 'score')
 
 class BookSerializer(serializers.HyperlinkedModelSerializer):
     comments = CommentSerializer(many=True)
