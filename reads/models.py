@@ -5,6 +5,10 @@ class Book(models.Model):
     title = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
     ASIN = models.CharField(max_length=20)
+    large_image = models.CharField(max_length=255, null=True)
+    medium_image = models.CharField(max_length=255, null=True)
+    small_image = models.CharField(max_length=255, null=True)
+    tiny_image = models.CharField(max_length=255, null=True)
     rank = models.IntegerField(null=True)
 
     def __str__(self):

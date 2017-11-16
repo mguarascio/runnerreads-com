@@ -13,6 +13,7 @@ dj-database-url = "*"
 gunicorn = "*"
 whitenoise = "*"
 djangorestframework = "*"
+python-amazon-simple-product-api = "*"
 
 
 [dev-packages]
