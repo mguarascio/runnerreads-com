@@ -7,8 +7,6 @@ amazon = AmazonAPI(os.environ['AMAZON_ACCESS_KEY'], os.environ['AMAZON_SECRET_KE
 class Amazon():
 
     def lookup(self, ItemId):
-        print(amazon)
-        print(amazon.aws_associate_tag)
         try:
             product = amazon.lookup(ItemId=ItemId)
             return product

@@ -7,17 +7,23 @@
 </head>
 <body>
     <div class="container">
+        <div class="row">
         <h1>Runner Reads</h1>
-        <h3>Top books recommended for runners by runners across the Internet</h3>
+        <h3>Top products recommended for runners by runners across the Internet</h3>
+    </div>
+    <div class="row">
         <hr class="curved"/>
+    </div>
         {% if latest_book_list %}
-        <ul class="data">
+        <div class="row">
         {% for book in latest_book_list %}
-            <li><a href="{% url 'reads:detail' book.id %}">{{ book.title }}</a></li>
+            <div class="col-md-2"><img src="{{ book.medium_image }}"/></div>
+            <div class="col-md-8"><h3 class="title"><a href="{{ book.link }}">{{ book.title }}</a></h3></div>
+            <!-- <li><a href="{% url 'reads:detail' book.id %}">{{ book.title }}</a></li> -->
         {% endfor %}
-        </ul>
+        </div>
         {% else %}
-        <p>No books are available.</p>
+        <div><p>No books are available.</p></div>
         {% endif %}
     </div>
 </body>

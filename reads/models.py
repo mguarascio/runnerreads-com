@@ -3,7 +3,7 @@ from django.db import models
 class Book(models.Model):
     
     title = models.CharField(max_length=255)
-    link = models.CharField(max_length=255)
+    link = models.CharField(max_length=2000)
     ASIN = models.CharField(max_length=20)
     large_image = models.CharField(max_length=255, null=True)
     medium_image = models.CharField(max_length=255, null=True)
