@@ -6,9 +6,12 @@ body {
     font-family: 'Rubik', sans-serif;
 }
 
-ul.data li {
-    list-style-type: none;
-    margin-bottom: 3rem;
+.top20 {
+    margin-top: 20px;
+}
+
+hr {
+    margin-bottom: -10px;
 }
 
 hr.curved {
