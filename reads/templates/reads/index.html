@@ -8,19 +8,26 @@
 <body>
     <div class="container">
         <div class="row">
-        <h1>Runner Reads</h1>
-        <h3>Top products recommended for runners by runners across the Internet</h3>
-    </div>
-    <div class="row">
-        <hr class="curved"/>
-    </div>
+            <h1>Runner Reads</h1>
+            <h3>Top products recommended for runners by runners across the Internet</h3>
+        </div>
+        <div class="row">
+            <hr class="curved"/>
+        </div>
         {% if latest_book_list %}
         
         {% for book in latest_book_list %}
         <div class="row top20">
-            <div class="col-md-2"><img src="{{ book.medium_image }}"/></div>
-            <div class="col-md-10"><h3 class="title"><a href="{{ book.link }}">{{ book.title }}</a></h3></div>
-            <!-- <li><a href="{% url 'reads:detail' book.id %}">{{ book.title }}</a></li> -->
+            <div class="col-md-2"><a href="{{ book.link }}"><img src="{{ book.medium_image }}"/></a></div>
+            <div class="col-md-10">
+                <div>
+                    <h4 class="title"><a href="{{ book.link }}">{{ book.title }}</a></h4>
+                </div>
+                <div>
+                    <a href="{% url 'reads:detail' book.id %}">Comments</a>
+                </div>
+            </div>
+            <!-- <li></li> -->
         </div>
         {% endfor %}
         {% else %}

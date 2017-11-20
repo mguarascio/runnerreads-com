@@ -7,13 +7,37 @@
 </head>
 <body>
     <div class="container">
-        <h1>{{ book.title }}</h1>
-        <h2>Link: {{ book.link }}</h2>
-        <h2>Rank: {{ book.rank }}</h2>
-        <ul class="data">
-        {% for comment in book.comment_set.all %}
-            <li>{{ comment.text }} : {{ comment.link }}</li>
+        <div class="row">
+            <h1>Runner Reads</h1>
+            <h3>Top products recommended for runners by runners across the Internet</h3>
+        </div>
+        <div class="row">
+            <hr class="curved"/>
+        </div>
+        <div class="row top20">
+            <div class="col-md-1">
+                <a href="{{ book.link }}"><img src="{{ book.small_image }}"/></a>
+            </div>
+            <div class="col-md-11">
+                <h4 class="title"><a href="{{ book.link }}">{{ book.title }}</a></h4>
+            </div>
+        </div>
+        {% for comment in book.comments.all %}
+        <div class="row callout callout-info">
+            <div class="row top20">
+                <div class="col-md-2">
+                    Upvotes: {{ comments.score }}
+                </div>
+                <div class="col-md-10">
+                    {{ comment.text }}
+                </div>
+            </div>
+            <div class="row top20">
+                <div class="col-md-10">
+                    <a href="{{ comment.link }}">source</a>
+                </div>
+            </div>
+        </div>
         {% endfor %}
-        </ul>
     </div>
 </body>

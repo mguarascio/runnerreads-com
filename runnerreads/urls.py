@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^reads/', include('reads.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^v1/api/reads/', include('reads.api')),
-    url(r'^.*$', RedirectView.as_view(url='reads/', permanent=False), name='index')
+    url(r'^.*$', include('reads.urls'))
+    # url(r'^.*$', RedirectView.as_view(url='reads/', permanent=False), name='index')
 ]

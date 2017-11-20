@@ -31,3 +31,14 @@ hr.curved:before {
     border-width: 0 0 1px 0; 
     border-radius: 20px; 
 }
+
+.callout-info {
+    border-left-color: #1b809e;
+}
+.callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
