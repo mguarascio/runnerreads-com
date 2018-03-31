@@ -10,6 +10,7 @@ class Book(models.Model):
     small_image = models.CharField(max_length=255, null=True)
     tiny_image = models.CharField(max_length=255, null=True)
     rank = models.IntegerField(null=True)
+    product_group = models.CharField(max_length=50, null=True)
 
     def __str__(self):
         return self.title + ' : ' + self.ASIN
@@ -19,6 +20,9 @@ class Comment(models.Model):
     text = models.TextField()
     link = models.CharField(max_length=255)
     score = models.IntegerField(null=True)
+    date_time = models.DateTimeField(null=True)
+    user = models.CharField(max_length=100, null=True)
+    source = models.CharField(max_length=50, null=True)
 
     def __str__(self):
         return self.link

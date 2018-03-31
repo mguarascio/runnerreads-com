@@ -26,7 +26,7 @@ class BookSerializer(serializers.HyperlinkedModelSerializer):
             amazon = Amazon()
             product = amazon.lookup(validated_data['ASIN'])
             if product:
-                book = Book(ASIN=validated_data['ASIN'], link=product.detail_page_url, title=product.title, large_image=product.large_image_url, medium_image=product.medium_image_url, small_image=product.small_image_url, tiny_image=product.tiny_image_url, rank=9999)
+                book = Book(ASIN=validated_data['ASIN'], link=product.detail_page_url, title=product.title, large_image=product.large_image_url, medium_image=product.medium_image_url, small_image=product.small_image_url, tiny_image=product.tiny_image_url, rank=9999, product_group=product.product_group)
                 book.save()
                 
         if book:
